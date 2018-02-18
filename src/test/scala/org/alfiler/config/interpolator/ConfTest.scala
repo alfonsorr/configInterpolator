@@ -12,4 +12,12 @@ class ConfTest extends FlatSpecLike with Matchers {
     c.getString("stringField") shouldBe "hello everyone"
     c.getInt("intField") shouldBe 342
   }
+  it should "work with resolving values also" in {
+    val c = conf"""{
+                    originalThing: 1234
+                    copyThing: $${originalThing}
+                   }"""
+    c.getString("originalThing") shouldBe c.getString("copyThing")
+    c.getString("originalThing") shouldBe "1234"
+  }
 }
