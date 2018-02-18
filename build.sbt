@@ -7,7 +7,7 @@ publishMavenStyle := true
 scalaVersion := "2.12.4"
 
 libraryDependencies ++= {
-  val  contextualVersion = "1.0.1"
+  val  contextualVersion = "1.1.0"
   val tsConfVersion = "1.3.1"
   Seq(
     "com.propensive" %% "contextual" % contextualVersion,
